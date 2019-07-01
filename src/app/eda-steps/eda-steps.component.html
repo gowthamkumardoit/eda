@@ -1,0 +1,11 @@
+<div class="container">
+  <mat-spinner diameter="50" color="primary" mode="indeterminate"></mat-spinner>
+
+  <ul>
+    <li *ngIf="isFileUploaded" [@fadeInfadeOut] = "'in'">{{ items[0].name }}</li>
+    <li *ngIf="isMissingValueFinded" [@fadeInfadeOut] = "'in'">{{ items[1].name }}</li>
+    <li *ngIf="isMissingValueTreated" [@fadeInfadeOut] = "'in'">{{ items[2].name }}</li>
+    <li *ngIf="isRandomForest" [@fadeInfadeOut] = "'in'">{{ items[3].name }}</li>
+    <li *ngIf="isFeatureColExtracted" [@fadeInfadeOut] = "'in'">{{ items[4].name }}</li>
+  </ul>
+</div>
