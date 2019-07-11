@@ -1,1 +1,40 @@
-<eda-result-dashboard></eda-result-dashboard>
+<div class="container" fxLayout="row" fxLayoutGap="20">
+    <div class="tree-container" fxFlex="30">
+        <mat-accordion>
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Data Profiling
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <ng-container *ngFor="let item of dataProfiling">
+                      <eda-options [name]= "item.name"></eda-options> 
+                </ng-container>
+            </mat-expansion-panel>
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Missing Values Treatment
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+            </mat-expansion-panel>
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Plots
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+            </mat-expansion-panel>
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Dependency Check
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+            </mat-expansion-panel>
+        </mat-accordion>
+    </div>
+    <div class="result-container" fxFlex="70">
+
+    </div>
+</div>

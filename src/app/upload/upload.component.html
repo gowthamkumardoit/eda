@@ -4,17 +4,13 @@
   </div>
   <form class="form">
     <div class="file-upload-wrapper" [attr.data-text]="fileName">
-      <input
-        name="file-upload-field"
-        type="file"
-        class="file-upload-field"
-        value=""
-        (change)="changeAttr($event)"
-      />
+      <input name="file-upload-field" type="file" class="file-upload-field" value="" (change)="changeAttr($event)" />
     </div>
   </form>
-  <div class="next-container" *ngIf="isNextEnabled" [@fadeInfadeOut] = "'in'">
-    <a class="next-button" mat-raised-button color="primary" [routerLink]="['/result']"  routerLinkActive="active">Next</a>
-    <p class="next-text">Click next to see the results...</p>
+
+  <div class="next-container" *ngIf="isNextEnabled" [@fadeInfadeOut]="'in'">
+    <eda-result-dashboard></eda-result-dashboard>
+    <!-- <a class="next-button" mat-raised-button color="primary" [routerLink]="['/result']"  routerLinkActive="active">Next</a>
+    <p class="next-text">Click next to see the results...</p> -->
   </div>
 </div>
