@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'eda-options',
@@ -7,10 +7,13 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class OptionsComponent implements OnInit {
   checked = false;
-  @Input() name;
+  @Input() options;
+  @Output() checkEvent: EventEmitter<any> = new EventEmitter();
   constructor() { }
 
   ngOnInit() {
   }
-
+  checkedFunc(event) {
+    this.checkEvent.emit(event);
+  }
 }

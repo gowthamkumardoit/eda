@@ -8,10 +8,10 @@ import {
   stagger,
   transition,
   state
-} from "@angular/animations";
+} from '@angular/animations';
 
 export const Animations = {
-  animeTrigger: trigger("fadeInfadeOut", [
+  animeTrigger: trigger('fadeInfadeOut', [
     // the "in" style determines the "resting" state of the element when it is visible.
       // the style name "in" must match the value of the [@simpleFadeAnimation]="'in'" attribute in the template
       state('in', style({opacity: 1})),

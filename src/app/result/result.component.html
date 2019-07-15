@@ -1,40 +1,87 @@
 <div class="container" fxLayout="row" fxLayoutGap="20">
-    <div class="tree-container" fxFlex="30">
-        <mat-accordion>
-            <mat-expansion-panel>
-                <mat-expansion-panel-header>
-                    <mat-panel-title>
-                        Data Profiling
-                    </mat-panel-title>
-                </mat-expansion-panel-header>
-                <ng-container *ngFor="let item of dataProfiling">
-                      <eda-options [name]= "item.name"></eda-options> 
-                </ng-container>
-            </mat-expansion-panel>
-            <mat-expansion-panel>
-                <mat-expansion-panel-header>
-                    <mat-panel-title>
-                        Missing Values Treatment
-                    </mat-panel-title>
-                </mat-expansion-panel-header>
-            </mat-expansion-panel>
-            <mat-expansion-panel>
-                <mat-expansion-panel-header>
-                    <mat-panel-title>
-                        Plots
-                    </mat-panel-title>
-                </mat-expansion-panel-header>
-            </mat-expansion-panel>
-            <mat-expansion-panel>
-                <mat-expansion-panel-header>
-                    <mat-panel-title>
-                        Dependency Check
-                    </mat-panel-title>
-                </mat-expansion-panel-header>
-            </mat-expansion-panel>
-        </mat-accordion>
+  <div class="tree-container" fxFlex="30">
+    <mat-accordion>
+      <mat-expansion-panel [expanded]="true">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Data Profiling
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <ng-container *ngFor="let item of dataProfiling; index as i">
+          <div *ngIf="i < 9">
+            <eda-options
+              [options]="item"
+              (checkEvent)="checkEvent($event)"
+            ></eda-options>
+          </div>
+        </ng-container>
+      </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Missing Values Treatment
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <ng-container *ngFor="let item of dataProfiling; index as i">
+          <div *ngIf="i > 8 && i < 12">
+            <eda-options
+              [options]="item"
+              (checkEvent)="checkEvent($event)"
+            ></eda-options>
+          </div>
+        </ng-container>
+      </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Plots
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <ng-container *ngFor="let item of dataProfiling; index as i">
+          <div *ngIf="i >= 12 && i < 15">
+            <eda-options
+              [options]="item"
+              (checkEvent)="checkEvent($event)"
+            ></eda-options>
+          </div>
+        </ng-container>
+      </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Dependency Check
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <ng-container *ngFor="let item of dataProfiling; index as i">
+          <div *ngIf="i > 14">
+            <eda-options
+              [options]="item"
+              (checkEvent)="checkEvent($event)"
+            ></eda-options>
+          </div>
+        </ng-container>
+      </mat-expansion-panel>
+    </mat-accordion>
+    <div
+      class="reset"
+      fxLayout="column"
+      fxLayoutGap="20"
+      fxLayoutAlign="space-around end"
+    >
+      <button mat-raised-button color="primary" (click)="clearAll()">
+        Clear All
+      </button>
     </div>
-    <div class="result-container" fxFlex="70">
-
+  </div>
+  <div
+    class="result-container scrollingContainer"
+    id="scrollMe"
+    #scrollMe
+    fxFlex="70"
+    [@listAnimation]="resultCards.length"
+  >
+    <div *ngFor="let item of resultCards" class="result">
+      <eda-result-cards [cardName]="item.name"></eda-result-cards>
     </div>
+  </div>
 </div>

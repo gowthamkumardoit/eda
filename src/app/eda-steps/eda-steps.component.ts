@@ -1,10 +1,10 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit } from '@angular/core';
 import { Animations } from '../animations/fadein-fadeout.animation';
 
 @Component({
-  selector: "eda-eda-steps",
-  templateUrl: "./eda-steps.component.html",
-  styleUrls: ["./eda-steps.component.scss"],
+  selector: 'eda-eda-steps',
+  templateUrl: './eda-steps.component.html',
+  styleUrls: ['./eda-steps.component.scss'],
   animations: [Animations.animeTrigger]
 })
 export class EdaStepsComponent implements OnInit {
@@ -18,11 +18,11 @@ export class EdaStepsComponent implements OnInit {
 
   ngOnInit() {
     this.items = [
-      { step: "1", name: "Uploading the file..." },
-      { step: "2", name: "Finding the missing values..." },
-      { step: "3", name: "Treating all missing values..." },
-      { step: "4", name: "Running the Random Forest Algorthim..." },
-      { step: "5", name: "Extracting the feature columns.." }
+      { step: '1', name: 'Uploading the file...' },
+      { step: '2', name: 'Finding the missing values...' },
+      { step: '3', name: 'Treating all missing values...' },
+      { step: '4', name: 'Running the Random Forest Algorthim...' },
+      { step: '5', name: 'Extracting the feature columns..' }
     ];
     this.updateValue();
   }

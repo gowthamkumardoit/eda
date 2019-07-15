@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavigationComponent } from './navigation/navigation.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { FlexLayoutModule } from '@angular/flex-layout';
+// tslint:disable-next-line:max-line-length
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatProgressSpinnerModule, MatGridListModule, MatCardModule, MatMenuModule, MatTableModule, MatPaginatorModule, MatSortModule, MatExpansionModule, MatFormFieldModule, MatCheckboxModule } from '@angular/material';
 import { HomeComponent } from './home/home.component';
 import { UploadComponent } from './upload/upload.component';
@@ -16,7 +17,9 @@ import { ResultDashboardComponent } from './result-dashboard/result-dashboard.co
 import { TableComponent } from './table/table.component';
 import { OptionsComponent } from './options/options.component';
 import { FormsModule } from '@angular/forms';
+import { ResultCardsComponent } from './result-cards/result-cards.component';
 
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +30,8 @@ import { FormsModule } from '@angular/forms';
     ResultComponent,
     ResultDashboardComponent,
     TableComponent,
-    OptionsComponent
+    OptionsComponent,
+    ResultCardsComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +54,8 @@ import { FormsModule } from '@angular/forms';
     MatExpansionModule,
     MatFormFieldModule,
     MatCheckboxModule,
-    FormsModule
+    FormsModule,
+    InfiniteScrollModule
 
   ],
   providers: [],

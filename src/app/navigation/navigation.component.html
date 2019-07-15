@@ -9,8 +9,12 @@
   >
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item routerLink="/home" routerLinkActive="Active">Upload Data</a>
-      <a mat-list-item routerLink="/stats" routerLinkActive="Active">Statistical Analysis</a>
+      <a mat-list-item routerLink="/home" routerLinkActive="Active"
+        >Upload Data</a
+      >
+      <a mat-list-item routerLink="/stats" routerLinkActive="Active"
+        >Statistical Analysis</a
+      >
       <a mat-list-item href="#">Algorithms</a>
     </mat-nav-list>
   </mat-sidenav>
@@ -28,8 +32,8 @@
       <span>EDA</span>
     </mat-toolbar>
     <!-- Add Content Here -->
-    <div class="bg">
-      <router-outlet></router-outlet>
+    <div class="bg" #scrollMe id="scrollMe">
+      <router-outlet #outlet="outlet"></router-outlet>
     </div>
   </mat-sidenav-content>
 </mat-sidenav-container>
