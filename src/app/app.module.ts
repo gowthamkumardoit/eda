@@ -20,6 +20,7 @@ import { FormsModule } from '@angular/forms';
 import { ResultCardsComponent } from './result-cards/result-cards.component';
 
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,7 +56,8 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
     MatFormFieldModule,
     MatCheckboxModule,
     FormsModule,
-    InfiniteScrollModule
+    InfiniteScrollModule,
+    HttpClientModule
 
   ],
   providers: [],
